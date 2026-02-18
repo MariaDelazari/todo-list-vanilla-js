@@ -15,8 +15,14 @@ function addTask() {
         alert("Digite alguma tarefa!");
         return false;
     }else{
-        console.log(inputElement.value);
+        /*Vou criar uma variavel que recebe o que o usuário digitou dentro desse input */
+        const newTask = inputElement.value;
+
+        /*add essa task dentro do array de tarefas */
+        tasks.push(newTask);
+        /*Limpa o input para não ficar o que o user digitou p/ futuramente ele poder digitar outra tarefa */
+        inputElement.value = '';
     }
 }
 
-buttonElement.onclick = addTask;
+        buttonElement.onclick = addTask;
