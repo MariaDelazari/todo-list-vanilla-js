@@ -1,48 +1,62 @@
-
-/*Seleção dos elementos do DOM */
+/*
+   Seleção dos elementos do DOM
+ */
 const inputElement = document.querySelector("#task-input");
 const buttonElement = document.querySelector("#add-task-button");
 const listElement = document.querySelector("#task-list");
 
-/* Array que vai armazenar as tarefas */
+
+/* 
+   Array que armazena as tarefas
+ */
 let tasks = [];
 
-//Rederizar tarefas 
-function renderTasks(){
-    /*deixando nossa ul vazia se tiver alguma coisa dentro dela */
+
+/*
+   Função responsável por renderizar as tarefas na tela
+ */
+function renderTasks() {
+
+    // Limpa a lista antes de renderizar novamente
+    // Isso evita duplicação visual
     listElement.innerHTML = "";
 
-    tasks.map((todo) =>{
-        let liElement = document.createElement("li");
-        let taskText = document.createTextNode(todo);
+    tasks.forEach((todo) => {
+
+        const liElement = document.createElement("li");
+        const taskText = document.createTextNode(todo);
 
         liElement.appendChild(taskText);
         listElement.appendChild(liElement);
 
-
-    })
+    });
 }
 
 
-
-/*Função para adicionar tarefa */
-
-/*Verifica se o input está vazio */
+/*  
+Função para adicionar nova tarefa 
+*/
 function addTask() {
-    if(inputElement.value === ''){
-        alert("Digite alguma tarefa!");
-        return false;
-    }else{
-        /*Vou criar uma variavel que recebe o que o usuário digitou dentro desse input */
-        const newTask = inputElement.value;
 
-        /*add essa task dentro do array de tarefas */
-        tasks.push(newTask);
-        /*Limpa o input para não ficar o que o user digitou p/ futuramente ele poder digitar outra tarefa */
-        inputElement.value = '';
-        /*renderizar novamente a lista */
-        renderTasks();
+    // Remove espaços extras antes e depois do texto
+    const newTask = inputElement.value.trim();
+
+    // Impede tarefas vazias
+    if (newTask === "") {
+        alert("Digite alguma tarefa!");
+        return;
     }
+
+    // Adiciona tarefa ao array (fonte da verdade)
+    tasks.push(newTask);
+
+    // Limpa o input para próxima digitação
+    inputElement.value = "";
+
+    // Atualiza a interface
+    renderTasks();
 }
 
-        buttonElement.onclick = addTask;
+
+// Evento de clique
+buttonElement.addEventListener("click", addTask);
