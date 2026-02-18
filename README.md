@@ -89,5 +89,7 @@ Contribuições são sempre bem-vindas! Se você tiver sugestões ou quiser apri
 
 ---
 
-<p align="center"><strong>“@ Pet Shop Paws: Seu amigo de quatro patas no mundo virtual!”</strong></p>
-<p align="center"><i>Tutores e patinhas conectados no universo online.</i></p>
+<p align="center"><strong>“Às vezes a coragem está em continuar, mesmo quando tudo pesa contra você.”</strong> <i> – It Ends With Us</i> </i> <strong>Colleen Hoover</strong></p> </p>
+<p align="center"><i>Um passo de cada vez, uma tarefa de cada vez.</p> 
+
+
