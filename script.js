@@ -13,7 +13,13 @@ function renderTasks(){
     listElement.innerHTML = "";
 
     tasks.map((todo) =>{
-        console.log("Tarefa: " + todo);
+        let liElement = document.createElement("li");
+        let taskText = document.createTextNode(todo);
+
+        liElement.appendChild(taskText);
+        listElement.appendChild(liElement);
+
+
     })
 }
 
