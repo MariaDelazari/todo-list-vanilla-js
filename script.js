@@ -32,6 +32,9 @@ function renderTasks() {
         let linkText = document.createTextNode("Excluir");
         linkElement.appendChild(linkText);
 
+        linkElement.setAttribute("onclick", "deleteTask()");
+
+
         liElement.appendChild(taskText);
         liElement.appendChild(linkElement);
         listElement.appendChild(liElement);
@@ -69,3 +72,8 @@ function addTask() {
 
 // Evento de clique
 buttonElement.addEventListener("click", addTask);
+
+function deleteTask(){
+    alert("test");
+
+}
