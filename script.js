@@ -7,6 +7,18 @@ const listElement = document.querySelector("#task-list");
 /* Array que vai armazenar as tarefas */
 let tasks = [];
 
+//Rederizar tarefas 
+function renderTasks(){
+    /*deixando nossa ul vazia se tiver alguma coisa dentro dela */
+    listElement.innerHTML = "";
+
+    tasks.map((todo) =>{
+        console.log("Tarefa: " + todo);
+    })
+}
+
+
+
 /*Função para adicionar tarefa */
 
 /*Verifica se o input está vazio */
@@ -22,6 +34,8 @@ function addTask() {
         tasks.push(newTask);
         /*Limpa o input para não ficar o que o user digitou p/ futuramente ele poder digitar outra tarefa */
         inputElement.value = '';
+        /*renderizar novamente a lista */
+        renderTasks();
     }
 }
 
