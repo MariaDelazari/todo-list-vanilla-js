@@ -26,8 +26,17 @@ function renderTasks() {
         const liElement = document.createElement("li");
         const taskText = document.createTextNode(todo);
 
+        let linkElement = document.createElement("a");
+        linkElement.setAttribute("href", "#");
+
+        let linkText = document.createTextNode("Excluir");
+        linkElement.appendChild(linkText);
+
         liElement.appendChild(taskText);
+        liElement.appendChild(linkElement);
         listElement.appendChild(liElement);
+
+        
 
     });
 }
