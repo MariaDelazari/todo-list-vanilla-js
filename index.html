@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List - Vanilla JS</title>
+</head>
+<body>
+    <main class="app">
+
+        <header class="app_header">To-do list</h1>
+        </header>
+
+        <section class="task-input">
+
+            <input
+             type="text"
+             id="task_input"
+             placeholder="enter your task"
+             autocomplete="off" 
+             >
+             <!--autocomplete="off"  = Ele dis p/ o navegador: “Não sugira nem preencha automaticamente valores anteriores aqui.”-->
+
+             <button id="add_task_button">Adicionar</button>
+
+        </section>
+
+        <!--Lista de tarefas-->
+        <section class="task-list-section">
+
+            <ul id="task-list">
+                <!--Aqui as tarefas serão inseridas via Javascript-->
+            </ul>
+
+        </section>
+
+        <script src="script.js"></script>
+    </main>
+    
+</body>
+</html>
