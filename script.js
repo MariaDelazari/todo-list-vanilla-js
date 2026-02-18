@@ -1,79 +1,74 @@
 /*
    Seleção dos elementos do DOM
- */
+*/
 const inputElement = document.querySelector("#task-input");
 const buttonElement = document.querySelector("#add-task-button");
 const listElement = document.querySelector("#task-list");
 
-
 /* 
    Array que armazena as tarefas
- */
+*/
 let tasks = [];
-
 
 /*
    Função responsável por renderizar as tarefas na tela
- */
+*/
 function renderTasks() {
 
     // Limpa a lista antes de renderizar novamente
-    // Isso evita duplicação visual
     listElement.innerHTML = "";
 
-    tasks.forEach((todo) => {
+    // Agora pegamos também o index
+    tasks.forEach((todo, index) => {
 
         const liElement = document.createElement("li");
-        const taskText = document.createTextNode(todo);
+        liElement.textContent = todo;
 
-        let linkElement = document.createElement("a");
-        linkElement.setAttribute("href", "#");
+        // Criando botão p/ excluir
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Excluir";
 
-        let linkText = document.createTextNode("Excluir");
-        linkElement.appendChild(linkText);
+        // Evento moderno e correto
+        deleteButton.addEventListener("click", function () {
+            deleteTask(index);
+        });
 
-        linkElement.setAttribute("onclick", "deleteTask()");
-
-
-        liElement.appendChild(taskText);
-        liElement.appendChild(linkElement);
+        liElement.appendChild(deleteButton);
         listElement.appendChild(liElement);
-
-        
-
     });
 }
 
-
 /*  
-Função para adicionar nova tarefa 
+   Função para adicionar nova tarefa 
 */
 function addTask() {
 
-    // Remove espaços extras antes e depois do texto
     const newTask = inputElement.value.trim();
 
-    // Impede tarefas vazias
     if (newTask === "") {
         alert("Digite alguma tarefa!");
         return;
     }
 
-    // Adiciona tarefa ao array (fonte da verdade)
     tasks.push(newTask);
 
-    // Limpa o input para próxima digitação
     inputElement.value = "";
 
-    // Atualiza a interface
     renderTasks();
 }
-
 
 // Evento de clique
 buttonElement.addEventListener("click", addTask);
 
-function deleteTask(){
-    alert("test");
 
+/*
+   Função para deletar tarefa
+*/
+function deleteTask(index) {
+
+    // Remove 1 item na posição recebida
+    tasks.splice(index, 1);
+
+    // Atualiza a tela
+    renderTasks();
 }
