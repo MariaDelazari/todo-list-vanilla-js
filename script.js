@@ -14,5 +14,9 @@ function addTask() {
     if(inputElement.value === ''){
         alert("Digite alguma tarefa!");
         return false;
+    }else{
+        console.log(inputElement.value);
     }
 }
+
+buttonElement.onclick = addTask;
