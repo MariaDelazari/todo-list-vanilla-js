@@ -8,7 +8,8 @@ const listElement = document.querySelector("#task-list");
 /* 
    Array que armazena as tarefas
 */
-let tasks = [];
+//sempre garantir que seja um array
+let tasks = JSON.parse(localStorage.getItem("@listTasks")) || [];
 
 /*
    Função responsável por renderizar as tarefas na tela
@@ -38,6 +39,7 @@ function renderTasks() {
     });
 }
 
+renderTasks();
 /*  
    Função para adicionar nova tarefa 
 */
@@ -55,6 +57,7 @@ function addTask() {
     inputElement.value = "";
 
     renderTasks();
+    saveData();
 }
 
 // Evento de clique
@@ -71,4 +74,10 @@ function deleteTask(index) {
 
     // Atualiza a tela
     renderTasks();
+    saveData();
+}
+
+function saveData(){
+    localStorage.setItem("@listTasks", JSON.stringify(tasks));
+
 }
