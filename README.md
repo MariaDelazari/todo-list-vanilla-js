@@ -15,7 +15,7 @@ Este projeto é uma **To-do List** que permite ao usuário:
 - Excluir tarefas
 - Salvar as tarefas no **LocalStorage** para que persistam mesmo após fechar o navegador  
 
-O aplicativo não utiliza frameworks ou bibliotecas externas, sendo uma ótima prática para quem quer aprender **DOM Manipulation** e **JavaScript puro**.
+O aplicativo não utiliza frameworks ou bibliotecas externas, sendo uma ótima prática para quem quer aprender **DOM Manipulation** e **JavaScript puro** ou quiser rever um conteúdo como eu fiz.
 
 ---
 
